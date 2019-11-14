@@ -1,0 +1,141 @@
+/*
+
+  I'm not taking credit for the design, this is a coded prototype of a design from Collect UI for practice. Url: https://static.collectui.com/shots/2403775/day-45-info-card-large.
+
+*/
+:root {
+  --color-primary-dark: #5c8ef2;
+  --color-primary-medium: #66a3f2;
+  --color-primary-light: #88b6f2;
+  --color-gray: #f2f2f2;
+  --color-gray-2: #aaaaaa;
+  --color-text-dark: #333333;
+  --font-stack: "Lato";
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--color-primary-light);
+  font-family: var(--font-stack);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60rem;
+}
+.card__header {
+  position: relative;
+  height: 30rem;
+  width: 100%;
+}
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card__title {
+  position: absolute;
+  color: #ffffff;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6rem;
+  border: 0.7rem solid #ffffff;
+  padding: 1rem 2.5rem;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+.card__title::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  filter: blur(0.5rem);
+  z-index: -1;
+}
+.card__details {
+  background-color: #ffffff;
+  width: 96%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4.5rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: -8rem;
+  z-index: 10;
+}
+.card__details .divider {
+  height: 3rem;
+  width: 0.2rem;
+  background-color: var(--color-gray);
+}
+.card__detail {
+  position: relative;
+}
+.card__detail h3 {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  color: var(--color-gray-2);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.card__detail p {
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+}
+.card__location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 4.5rem;
+  margin-top: -2rem;
+  background-color: var(--color-primary-medium);
+  border-radius: 10rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+  color: #ffffff;
+  z-index: 10;
+}
+.card__location-icon {
+  height: 2rem;
+  margin-right: 2rem;
+}
+.card__location img {
+  fill: #ffffff;
+}
+
+/*# sourceMappingURL=styles.css.map */
