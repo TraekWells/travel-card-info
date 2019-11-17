@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 
   I'm not taking credit for the design, this is a coded prototype of a design from Collect UI for practice. Url: https://static.collectui.com/shots/2403775/day-45-info-card-large.
@@ -6,7 +7,7 @@
 :root {
   --color-primary-dark: #5c8ef2;
   --color-primary-medium: #66a3f2;
-  --color-primary-light: #88b6f2;
+  --color-primary-light: #7fb1ff;
   --color-gray: #f2f2f2;
   --color-gray-2: #aaaaaa;
   --color-text-dark: #333333;
@@ -51,6 +52,34 @@ body {
   position: relative;
   height: 30rem;
   width: 100%;
+  box-shadow: 0 1rem 2rem var(--color-primary-dark), 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+.card__header::before, .card__header::after {
+  font-family: "Font Awesome 5 Free";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  position: absolute;
+  background-color: firebrick;
+  height: 12rem;
+  width: 6rem;
+  bottom: 40%;
+  opacity: 0.3;
+}
+.card__header::before {
+  content: "";
+  left: -6rem;
+  background-image: url("https://images.pexels.com/photos/979714/pexels-photo-979714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+}
+.card__header::after {
+  content: "";
+  right: -6rem;
+  background-image: url("https://images.pexels.com/photos/1666012/pexels-photo-1666012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
 }
 .card__image {
   width: 100%;
@@ -80,8 +109,9 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  filter: blur(0.5rem);
   z-index: -1;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1rem);
 }
 .card__details {
   background-color: #ffffff;
@@ -93,11 +123,22 @@ body {
   border-radius: 0.5rem;
   margin-top: -8rem;
   z-index: 10;
+  position: relative;
 }
 .card__details .divider {
   height: 3rem;
   width: 0.2rem;
   background-color: var(--color-gray);
+}
+.card__details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 1rem 2rem var(--color-primary-dark), 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  z-index: -10;
 }
 .card__detail {
   position: relative;
@@ -119,6 +160,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
   padding: 1.5rem 4.5rem;
   margin-top: -2rem;
   background-color: var(--color-primary-medium);
@@ -129,10 +171,11 @@ body {
   letter-spacing: 0.1rem;
   color: #ffffff;
   z-index: 10;
+  box-shadow: 0 1rem 2rem var(--color-primary-dark), 0 1rem 3rem rgba(0, 0, 0, 0.1);
 }
 .card__location-icon {
   height: 2rem;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
 }
 .card__location img {
   fill: #ffffff;
